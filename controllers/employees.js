@@ -5,14 +5,14 @@ exports.createEmployee = (req, res, next) => {
     const employee = new Employee({
         ...req.body,
     })
-    thing
+    employee
         .save()
         .then(() => res.status(201).json({ message: 'employee created' }))
         .catch((err) => res.status(400).json({ err }))
 }
 
 exports.viewEmployees = (req, res) => {
-    Thing.find()
-        .then((things) => res.status(200).json(things))
+    Employee.find()
+        .then((employees) => res.status(200).json(employees))
         .catch((err) => res.status(400).json({ err }))
 }
